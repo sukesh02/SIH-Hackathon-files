@@ -1,0 +1,36 @@
+.body {
+    background-color: #ffffff;
+    
+}
+
+.about {
+    background-color: #FEF5ED;
+}
+
+.upload {
+    background-color: #D3E4CD;
+}
+
+.result {
+    background-color: #ADC2A9;
+}
+
+.ratings {
+    background-color: #99A799;
+}
+
+#sec1 {
+    height: 500px;
+}
+
+#sec2 {
+    height: 500px;
+}
+
+#sec3 {
+    height: 500px;
+}
+
+#sec4 {
+    height: 500px;
+}
