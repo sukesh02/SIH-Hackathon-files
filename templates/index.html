@@ -21,22 +21,39 @@
         </p>
     </section>
     <section id="sec2" class='upload'>
+        <h1>Upload files</h1>
+        <br>
         <form action="" method="post" enctype="multipart/form-data">
-            <label for="name">name</label>
-            <input type="text" name="name" id="name">
-            <br>
-            <label for="age">age</label>
-            <input type="text" name="age" id="age">
-            <br>
-            <input type="radio" name="sex" id="sex_male" value="male">Male</input>
-            <input type="radio" name="sex" id="sex_female" value="female">Female</input>
-            <input type="radio" name="sex" id="others" value="others">Others</input>
-            <br>
-            <input type="file" name="img" accept="image/*">
-            <br>
-            <input type="file" name="sign" accept="image/*">
-            <br>
-            <input type="submit" value="Submit">
+            <div class="input-box">
+                <label for="name">Name:</label>
+                <br>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="input-box">
+                <label for="age">Age:</label>
+                <br>
+                <input type="text" name="age" id="age" required>
+            </div>
+            <div class="input-box">
+                <label for="sex">Sex:</label>
+                <br>
+                <select name="sex" id="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <label for="img">Passport size photo:</label>
+                <input type="file" name="img" accept="image/*" id="img">
+            </div>
+            <div class="input-box">
+                <label for="sign">Signature:</label>
+                <input type="file" name="sign" accept="image/*" id="sign">
+            </div>
+            <div class="input-box">
+                <input type="submit" value="Submit">
+            </div>
         </form>
     </section>
     <section id="sec3" class="result">

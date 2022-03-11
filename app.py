@@ -17,10 +17,10 @@ def main():
         img = request.files["img"]
         sign = request.files["sign"]
         # Check if the uploaded image has proper extention
-        if img.filename.lower().endswith(image_extentions) and sign.filename.lower().endswith(image_extentions):
-            pass
-        else:
-            print("--- --- --- --- Extension error")
+        # if img.filename.lower().endswith(image_extentions) and sign.filename.lower().endswith(image_extentions):
+        #     pass
+        # else:
+        #     print("--- --- --- --- Extension error")
         # Convert form values into dict
         data = {
             "name": name,

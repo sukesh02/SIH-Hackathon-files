@@ -53,12 +53,49 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .upload form {
+    /* height: 50%; */
+    width: 25%;
     border: 2px solid var(--brown2);
     border-radius: 10px;
-    padding: 3%;
+    padding: 1%;
+    font-family: 'Amaranth', sans-serif;
+}
+
+.upload h1 {
+    font-family: 'Amaranth', sans-serif;
+}
+
+.input-box {
+    /* background-color: aqua; */
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.input-box label {
+    font-size: 1.4vw;
+}
+.input-box input, .input-box select {
+    width: 100%;
+    border: none;
+    font-size: 1.7vw;
+    padding: 1%;
+    border-bottom: 2px solid var(--brown3);
+}
+
+.input-box input[type=submit] {
+    border-radius: 10px;
+    background-color: var(--brown4);
+    border: none;
+    /* border: 2px solid var(--brown3); */
+}
+
+.input-box input[type=file] {
+    font-size: 1.2vw;
+    border: none;
 }
 
 .result {
