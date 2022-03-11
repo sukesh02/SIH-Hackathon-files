@@ -1,14 +1,64 @@
-.body {
-    background-color: #ffffff;
-    
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+
+:root {
+    --brown1: #FFFBE9;
+    --brown2: #E3CAA5;
+    --brown3: #CEAB93;
+    --brown4: #AD8B73;
+    --black: rgb(36, 36, 36);
+    --white: rgb(226, 226, 226);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    height: 10vh;
+    background-color: var(--brown4);
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--black);
+    padding-left: 1%;
+    font-family: 'Amaranth', sans-serif;
+}
+
+section {
+    height: 100vh;
 }
 
 .about {
-    background-color: #FEF5ED;
+    background-color: var(--brown1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.about p {
+    padding: 1%;
+    width: 50%;
+    font-size: 1.5vw;
+    font-family: 'Amaranth', sans-serif;
+    border: 2px solid var(--brown2);
+    border-radius: 10px;
 }
 
 .upload {
-    background-color: #D3E4CD;
+    background-color: var(--brown1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload form {
+    border: 2px solid var(--brown2);
+    border-radius: 10px;
+    padding: 3%;
 }
 
 .result {
@@ -17,20 +67,4 @@
 
 .ratings {
     background-color: #99A799;
-}
-
-#sec1 {
-    height: 500px;
-}
-
-#sec2 {
-    height: 500px;
-}
-
-#sec3 {
-    height: 500px;
-}
-
-#sec4 {
-    height: 500px;
 }

@@ -16,12 +16,14 @@ def face_verification(img_path):
         minSize=(30, 30),
     )
     if len(faces) == 1:
-        print(f"Found {len(faces)} faces!")
+        # print(f"Found {len(faces)} faces!")
         return True
     else:
-        print(faces)
-        print("Either 0 or more than 1 face detected!!")
+        # print(faces)
+        # print("Either 0 or more than 1 face detected!!")
         return False
     # Draw a rectangle around the faces
     # for (x, y, w, h) in faces:
     #     cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+
+# print(face_verification("samples/face1.jpg"))
