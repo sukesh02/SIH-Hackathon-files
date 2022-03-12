@@ -1,6 +1,8 @@
-from flask import Flask, url_for, render_template, request
+from email import message
+from flask import Flask, redirect, url_for, render_template, request
 import os
 from face_verification import face_verification
+from signature_verification import signature_verification
 import json
 
 app = Flask(__name__)
@@ -16,6 +18,9 @@ def main():
         sex = request.form["sex"]
         img = request.files["img"]
         sign = request.files["sign"]
+        # Changing uploaded image's file name
+        img.filename = f"{name}_photo.png"
+        sign.filename = f"{name}_sign.png"
         # Check if the uploaded image has proper extention
         # if img.filename.lower().endswith(image_extentions) and sign.filename.lower().endswith(image_extentions):
         #     pass
@@ -26,25 +31,27 @@ def main():
             "name": name,
             "age": age,
             "sex": sex,
-            "image_src": f"./storage/{name}/{img.filename}",
-            "sign_src": f"./storage/{name}/{sign.filename}"
+            "image_src": f"./static/storage/{name}/{img.filename}",
+            "sign_src": f"./static/storage/{name}/{sign.filename}"
         }
         # Make a folder inside ./storage with name as name variable
         try:
-            os.mkdir(f"./storage/{name}")
+            os.mkdir(f"./static/storage/{name}")
         except:
             pass
         # Create a json file in ./storage/name to save info from the form
-        with open(f"./storage/{name}/{name}.json", "w") as f:
+        with open(f"./static/storage/{name}/{name}.json", "w") as f:
             json.dump(data, f)
         # Save image and sign in ./storage/name
-        img.save(f"./storage/{name}/{img.filename}")
-        img.save(f"./storage/{name}/{sign.filename}")
+        img.save(f"./static/storage/{name}/{img.filename}")
+        img.save(f"./static/storage/{name}/{sign.filename}")
         # Verify if the image has a face
-        if face_verification(f"./storage/{name}/{img.filename}"):
-            print("--- --- --- --- Face detected")
+        if face_verification(f"./static/storage/{name}/{img.filename}") and signature_verification():
+            face_detect = True
+            return render_template("result.html", name=name, age=age, sex=sex, img_path=data["image_src"], sign_path=data["sign_src"])
         else:
-            print("--- --- --- --- No face detected")
+            face_detect = False
+            return render_template("error.html")
     return render_template("index.html")
 
 if __name__ == "__main__":

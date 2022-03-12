@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+
+:root {
+    --brown1: #FFFBE9;
+    --brown2: #E3CAA5;
+    --brown3: #CEAB93;
+    --brown4: #AD8B73;
+    --black: rgb(36, 36, 36);
+    --white: rgb(226, 226, 226);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    height: 10vh;
+    background-color: var(--brown4);
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--black);
+    padding-left: 1%;
+    font-family: 'Amaranth', sans-serif;
+}
+
+section {
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--brown1);
+}
+
+section div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
