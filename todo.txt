@@ -1,0 +1,6 @@
+Sign detection
+Error messgaes and If else cases
+Leela admit card
+Use sql?
+Convert html to pdf -> Download admit card as pdf
+Responsive website

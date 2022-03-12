@@ -1,4 +1,3 @@
-from email import message
 from flask import Flask, redirect, url_for, render_template, request
 import os
 from face_verification import face_verification
@@ -48,9 +47,11 @@ def main():
         # Verify if the image has a face
         if face_verification(f"./static/storage/{name}/{img.filename}") and signature_verification():
             face_detect = True
+            # If face detected and sign detected, create admit card
             return render_template("result.html", name=name, age=age, sex=sex, img_path=data["image_src"], sign_path=data["sign_src"])
         else:
             face_detect = False
+            # Else return error page
             return render_template("error.html")
     return render_template("index.html")
 
